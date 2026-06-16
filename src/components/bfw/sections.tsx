@@ -415,16 +415,33 @@ export function Destination() {
     { label: "Turismo transfronterizo", value: 18, suffix: " %", prefix: "+", desc: "Visitantes 2023 → 2024" },
   ];
   const guestCountries: [string, string][] = [
+    ["Argentina", "ar"],
     ["España", "es"],
     ["Portugal", "pt"],
-    ["Francia", "fr"],
-    ["Italia", "it"],
-    ["Argentina", "ar"],
-    ["Alemania", "de"],
-    ["Brasil", "br"],
     ["Paraguay", "py"],
+    ["Uruguay", "uy"],
+    ["Panamá", "pa"],
+    ["Brasil", "br"],
+    ["Bolivia", "bo"],
+    ["Perú", "pe"],
     ["Colombia", "co"],
-    ["Japón", "jp"],
+    ["Venezuela", "ve"],
+    ["R. D. del Congo", "cd"],
+    ["Italia", "it"],
+    ["Singapur", "sg"],
+    ["Kazajistán", "kz"],
+    ["Francia", "fr"],
+    ["Reino Unido", "gb"],
+    ["México", "mx"],
+    ["Hungría", "hu"],
+    ["Indonesia", "id"],
+    ["E. A. U.", "ae"],
+    ["India", "in"],
+    ["Costa Rica", "cr"],
+    ["Puerto Rico", "pr"],
+    ["Serbia", "rs"],
+    ["Canadá", "ca"],
+    ["Montenegro", "me"],
   ];
   return (
     <section id="destino" className="relative border-t hairline bg-graphite-soft py-28 sm:py-40">
@@ -478,20 +495,20 @@ export function Destination() {
               La moda <span className="font-serif-italic text-sand">no tiene fronteras.</span>
             </h3>
             <p className="mt-4 max-w-md text-stone-cream/65">
-              10 países conectados a la pasarela de Badajoz.
+              27 países conectados a la pasarela de Badajoz.
             </p>
           </div>
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-5">
+          <div className="mt-10 grid grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3 lg:grid-cols-9">
             {guestCountries.map(([name, code], i) => (
-              <Reveal key={name} delay={i * 80} className="block w-full">
-                <div className="group flex flex-col items-center gap-3 border border-sand/10 bg-background/30 px-4 py-5 transition-all duration-300 hover:border-sand/40 hover:bg-background/60 hover:-translate-y-1">
+              <Reveal key={name} delay={Math.min(i * 40, 400)} className="block w-full">
+                <div className="group flex flex-col items-center gap-2 border border-sand/10 bg-background/30 px-2 py-3 transition-all duration-300 hover:border-sand/40 hover:bg-background/60 hover:-translate-y-0.5 sm:px-3 sm:py-4">
                   <img
                     src={`https://flagcdn.com/w80/${code}.png`}
                     alt={`Bandera de ${name}`}
                     loading="lazy"
-                    className="h-8 w-12 object-cover shadow-sm transition-transform duration-300 group-hover:scale-110 sm:h-10 sm:w-14"
+                    className="h-6 w-9 object-cover shadow-sm transition-transform duration-300 group-hover:scale-110 sm:h-8 sm:w-12"
                   />
-                  <span className="text-xs tracking-wide text-stone-cream/70 sm:text-sm">{name}</span>
+                  <span className="text-[0.65rem] leading-tight tracking-wide text-stone-cream/70 sm:text-xs">{name}</span>
                 </div>
               </Reveal>
             ))}
