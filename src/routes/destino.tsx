@@ -5,7 +5,11 @@ export const Route = createFileRoute("/destino")({
   head: () => ({
     meta: [
       { title: "Destino — Badajoz Fashion Week" },
-      { name: "description", content: "Badajoz: capital ibérica entre dos países. Patrimonio, industria conectada y mapa interactivo de la ciudad." },
+      {
+        name: "description",
+        content:
+          "Badajoz: capital ibérica entre dos países. Patrimonio, industria conectada y mapa interactivo de la ciudad.",
+      },
     ],
   }),
   component: () => (

@@ -77,15 +77,33 @@ function Page() {
   return (
     <main className="overflow-clip bg-background text-foreground route-enter">
       <Hero />
-      <Reveal><Manifesto /></Reveal>
-      <Reveal><RunwayBreaker /></Reveal>
-      <Reveal><Destination /></Reveal>
-      <Reveal><EventSection /></Reveal>
-      <Reveal><Curaduria /></Reveal>
-      <Reveal><BadajozMap /></Reveal>
-      <Reveal><Sponsors /></Reveal>
-      <Reveal><Future /></Reveal>
-      <Reveal><Contact /></Reveal>
+      <Reveal>
+        <Manifesto />
+      </Reveal>
+      <Reveal>
+        <RunwayBreaker />
+      </Reveal>
+      <Reveal>
+        <Destination />
+      </Reveal>
+      <Reveal>
+        <EventSection />
+      </Reveal>
+      <Reveal>
+        <Curaduria />
+      </Reveal>
+      <Reveal>
+        <BadajozMap />
+      </Reveal>
+      <Reveal>
+        <Sponsors />
+      </Reveal>
+      <Reveal>
+        <Future />
+      </Reveal>
+      <Reveal>
+        <Contact />
+      </Reveal>
     </main>
   );
 }

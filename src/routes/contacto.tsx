@@ -5,7 +5,11 @@ export const Route = createFileRoute("/contacto")({
   head: () => ({
     meta: [
       { title: "Contacto — Badajoz Fashion Week" },
-      { name: "description", content: "Formar parte del proyecto. Una conversación, un dossier, una alianza. Las plazas estratégicas son limitadas por diseño." },
+      {
+        name: "description",
+        content:
+          "Formar parte del proyecto. Una conversación, un dossier, una alianza. Las plazas estratégicas son limitadas por diseño.",
+      },
     ],
   }),
   component: () => (

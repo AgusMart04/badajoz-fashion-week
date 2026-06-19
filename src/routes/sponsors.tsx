@@ -5,7 +5,11 @@ export const Route = createFileRoute("/sponsors")({
   head: () => ({
     meta: [
       { title: "Sponsors — Badajoz Fashion Week" },
-      { name: "description", content: "Un club de oportunidades ibéricas. No vendemos espacio publicitario. Construimos una posición de marca con peso institucional." },
+      {
+        name: "description",
+        content:
+          "Un club de oportunidades ibéricas. No vendemos espacio publicitario. Construimos una posición de marca con peso institucional.",
+      },
     ],
   }),
   component: () => (

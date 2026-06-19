@@ -63,11 +63,12 @@ export const Route = createRootRoute({
   head: () => ({
     meta: [
       { title: "Badajoz Fashion Week" },
-      { name: "description", content: "Plataforma ibérica de moda, negocio y cultura. España — Portugal." },
+      {
+        name: "description",
+        content: "Plataforma ibérica de moda, negocio y cultura. España — Portugal.",
+      },
     ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-    ],
+    links: [{ rel: "stylesheet", href: appCss }],
   }),
   component: RootComponent,
   notFoundComponent: NotFoundComponent,

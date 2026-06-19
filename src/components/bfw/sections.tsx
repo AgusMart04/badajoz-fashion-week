@@ -41,7 +41,7 @@ export function Reveal({
           observer.disconnect();
         }
       },
-      { threshold: 0.12 }
+      { threshold: 0.12 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -86,7 +86,7 @@ function CountUp({ target, duration = 1500 }: { target: number; duration?: numbe
           requestAnimationFrame(animate);
         }
       },
-      { threshold: 0.3 }
+      { threshold: 0.3 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -145,7 +145,10 @@ export function Nav() {
             <ul className="flex items-center gap-10">
               {links.map(([label, href]) => (
                 <li key={href}>
-                  <Link to={href} className="text-mono text-stone-cream/70 transition-colors hover:text-sand">
+                  <Link
+                    to={href}
+                    className="text-mono text-stone-cream/70 transition-colors hover:text-sand"
+                  >
                     {label}
                   </Link>
                 </li>
@@ -213,7 +216,7 @@ export function Nav() {
               className="menu-item-in mt-12 border-t hairline pt-6 text-mono text-stone-cream/55"
               style={{ animationDelay: `${200 + links.length * 120}ms` }}
             >
-              hello@badajozfashionweek.com
+              badajozfashionweek.oficial@gmail.com
             </div>
           </nav>
         </div>
@@ -246,7 +249,9 @@ export function Hero() {
             <Reveal delay={150}>
               <div className="mb-8 flex items-center gap-4">
                 <span className="h-px w-12 bg-sand" />
-                <span className="font-serif-italic text-base text-sand sm:text-lg">Edición 01 — Octubre 2026</span>
+                <span className="font-serif-italic text-base text-sand sm:text-lg">
+                  Edición 01 — Octubre 2026
+                </span>
               </div>
             </Reveal>
             <Reveal delay={350}>
@@ -274,14 +279,16 @@ export function Hero() {
           <div className="lg:col-span-3">
             <Reveal delay={950}>
               <p className="hidden border-l hairline pl-5 text-sm leading-relaxed text-stone-cream/70 sm:block">
-                La plataforma que conecta creatividad, industria y oportunidades entre España y Portugal.
-                Una pasarela. Un mercado. Una conversación.
+                La plataforma que conecta creatividad, industria y oportunidades entre España y
+                Portugal. Una pasarela. Un mercado. Una conversación.
               </p>
             </Reveal>
             <Reveal delay={1150}>
               <div className="mt-10 flex flex-col gap-5">
                 <MinimalCTA scrollTo="manifiesto">Explorar el proyecto</MinimalCTA>
-                <MinimalCTA scrollTo="sponsors" muted>Oportunidades sponsors</MinimalCTA>
+                <MinimalCTA scrollTo="sponsors" muted>
+                  Oportunidades sponsors
+                </MinimalCTA>
               </div>
             </Reveal>
           </div>
@@ -358,16 +365,15 @@ export function Manifesto() {
             </h2>
             <div className="mt-16 grid gap-12 border-t hairline pt-12 lg:grid-cols-3">
               <p className="text-lg leading-[1.75] text-stone-cream/80">
-                Badajoz es <em>parte del producto</em>. Un corredor entre dos países,
-                una piedra que ya tiene mil años de marca.
+                Badajoz es <em>parte del producto</em>. Un corredor entre dos países, una piedra que
+                ya tiene mil años de marca.
               </p>
               <p className="text-lg leading-[1.75] text-stone-cream/80">
-                La Fashion Week es la <em>excusa estratégica</em> para conectar
-                diseñadores, empresas, instituciones y mercados.
+                La Fashion Week es la <em>excusa estratégica</em> para conectar diseñadores,
+                empresas, instituciones y mercados.
               </p>
               <p className="text-lg leading-[1.75] text-stone-cream/80">
-                Un evento que no compite con Madrid ni con Lisboa.
-                Los <em>une</em>.
+                Un evento que no compite con Madrid ni con Lisboa. Los <em>une</em>.
               </p>
             </div>
           </div>
@@ -388,11 +394,7 @@ export function RunwayBreaker() {
       className="relative h-[80svh] w-full overflow-hidden bg-graphite duotone"
     >
       <div className="absolute -inset-[10%]">
-        <img
-          src={runwayBreaker}
-          alt=""
-          className="h-full w-full object-cover parallax-slow"
-        />
+        <img src={runwayBreaker} alt="" className="h-full w-full object-cover parallax-slow" />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-graphite/40 via-transparent to-graphite/60" />
     </section>
@@ -409,40 +411,173 @@ export function Destination() {
     ["Patrimonio Activo", "Murallas, Alcazaba y Plaza Alta como escenarios de pasarela."],
     ["Industria Conectada", "Hub de moda, agroalimentación premium y exportación bilateral."],
   ];
-  const metrics: { label: string; value: number; suffix: string; prefix?: string; desc: string }[] = [
-    { label: "Mercado ibérico", value: 59, suffix: " M", desc: "Población combinada ES + PT" },
-    { label: "Patrimonio", value: 9, suffix: " sitios", desc: "UNESCO en el eje Mérida — Évora" },
-    { label: "Turismo transfronterizo", value: 18, suffix: " %", prefix: "+", desc: "Visitantes 2023 → 2024" },
+  const metrics: { label: string; value: number; suffix: string; prefix?: string; desc: string }[] =
+    [
+      { label: "Mercado ibérico", value: 59, suffix: " M", desc: "Población combinada ES + PT" },
+      { label: "Patrimonio", value: 9, suffix: " sitios", desc: "UNESCO en el eje Mérida — Évora" },
+      {
+        label: "Turismo transfronterizo",
+        value: 18,
+        suffix: " %",
+        prefix: "+",
+        desc: "Visitantes 2023 → 2024",
+      },
+    ];
+  const guestCountries = [
+    {
+      name: "Argentina",
+      code: "ar",
+      desc: "Buenos Aires como hub de diseño emergente del Cono Sur.",
+    },
+    {
+      name: "España",
+      code: "es",
+      desc: "Referente europeo de moda, industria textil y comercio ibérico.",
+    },
+    {
+      name: "Portugal",
+      code: "pt",
+      desc: "Manufactura de alto valor y diseño lusófono con proyección global.",
+    },
+    {
+      name: "Paraguay",
+      code: "py",
+      desc: "Industria textil en crecimiento con enlace productivo ES — PT — PY.",
+    },
+    {
+      name: "Uruguay",
+      code: "uy",
+      desc: "Diseño sostenible y producción artesanal con identidad rioplatense.",
+    },
+    {
+      name: "Panamá",
+      code: "pa",
+      desc: "Puerta comercial de las Américas y centro de distribución regional.",
+    },
+    {
+      name: "Brasil",
+      code: "br",
+      desc: "Mercado más grande de Latinoamérica. Moda, textile y retail.",
+    },
+    {
+      name: "Bolivia",
+      code: "bo",
+      desc: "Textiles ancestrales y materias primas con valor cultural.",
+    },
+    { name: "Perú", code: "pe", desc: "Alpaca, algodón Pima y una escena de diseño en auge." },
+    {
+      name: "Colombia",
+      code: "co",
+      desc: "Hub textile de las Américas. Moda, confección y exportación.",
+    },
+    {
+      name: "Venezuela",
+      code: "ve",
+      desc: "Tradición de haute couture y mercado de lujo en reconstrucción.",
+    },
+    {
+      name: "R. D. del Congo",
+      code: "cd",
+      desc: "Textiles artesanales y recursos minerales de alto potencial.",
+    },
+    {
+      name: "Italia",
+      code: "it",
+      desc: "Capital mundial del lujo. Alta costura, cuero y manufacturing premium.",
+    },
+    {
+      name: "Singapur",
+      code: "sg",
+      desc: "Puerta financiera de Asia y plataforma de diseño contemporáneo.",
+    },
+    {
+      name: "Kazajistán",
+      code: "kz",
+      desc: "Corredor euroasiático textil y mercado emergente de moda.",
+    },
+    {
+      name: "Francia",
+      code: "fr",
+      desc: "París como epicentro de la moda y la industria de lujo global.",
+    },
+    {
+      name: "Reino Unido",
+      code: "gb",
+      desc: "Londres: moda vanguardista, industria creativa y comercio bilateral.",
+    },
+    {
+      name: "México",
+      code: "mx",
+      desc: "Industria textil masiva y escena de diseño con raíces artesanales.",
+    },
+    {
+      name: "Hungría",
+      code: "hu",
+      desc: "Budapest como centro de diseño emergente de Europa Central.",
+    },
+    {
+      name: "Indonesia",
+      code: "id",
+      desc: "Producción textil de escala y artesanías de alto valor.",
+    },
+    {
+      name: "E. A. U.",
+      code: "ae",
+      desc: "Dubái como plataforma comercial entre Europa, Asia y África.",
+    },
+    {
+      name: "India",
+      code: "in",
+      desc: "Segundo productor textil del mundo. Artesanía e industria a escala.",
+    },
+    {
+      name: "Costa Rica",
+      code: "cr",
+      desc: "Moda sostenible y producción responsable en Centroamérica.",
+    },
+    {
+      name: "Puerto Rico",
+      code: "pr",
+      desc: "Puente cultural y comercial entre el Caribe y el mercado americano.",
+    },
+    {
+      name: "Serbia",
+      code: "rs",
+      desc: "Diseño balcánico con costos competitivos y mano de obra cualificada.",
+    },
+    {
+      name: "Canadá",
+      code: "ca",
+      desc: "Vancouver como puerta del Pacífico y mercado de moda sostenible.",
+    },
+    {
+      name: "Montenegro",
+      code: "me",
+      desc: "Turismo de lujo y producción artesanal del Adriático.",
+    },
+    {
+      name: "Estados Unidos",
+      code: "us",
+      desc: "Mayor mercado de consumo del mundo. Moda, retail y tecnología.",
+    },
   ];
-  const guestCountries: [string, string][] = [
-    ["Argentina", "ar"],
-    ["España", "es"],
-    ["Portugal", "pt"],
-    ["Paraguay", "py"],
-    ["Uruguay", "uy"],
-    ["Panamá", "pa"],
-    ["Brasil", "br"],
-    ["Bolivia", "bo"],
-    ["Perú", "pe"],
-    ["Colombia", "co"],
-    ["Venezuela", "ve"],
-    ["R. D. del Congo", "cd"],
-    ["Italia", "it"],
-    ["Singapur", "sg"],
-    ["Kazajistán", "kz"],
-    ["Francia", "fr"],
-    ["Reino Unido", "gb"],
-    ["México", "mx"],
-    ["Hungría", "hu"],
-    ["Indonesia", "id"],
-    ["E. A. U.", "ae"],
-    ["India", "in"],
-    ["Costa Rica", "cr"],
-    ["Puerto Rico", "pr"],
-    ["Serbia", "rs"],
-    ["Canadá", "ca"],
-    ["Montenegro", "me"],
-  ];
+  const [selectedCountry, setSelectedCountry] = useState<(typeof guestCountries)[number] | null>(
+    null,
+  );
+  const [overlayClosing, setOverlayClosing] = useState(false);
+
+  const openCountry = (c: (typeof guestCountries)[number]) => {
+    setSelectedCountry(c);
+    setOverlayClosing(false);
+  };
+
+  const closeOverlay = () => {
+    setOverlayClosing(true);
+    setTimeout(() => {
+      setSelectedCountry(null);
+      setOverlayClosing(false);
+    }, 500);
+  };
   return (
     <section id="destino" className="relative border-t hairline bg-graphite-soft py-28 sm:py-40">
       <div className="mx-auto max-w-[1600px] px-4 sm:px-8">
@@ -455,8 +590,8 @@ export function Destination() {
               <span className="font-serif-italic text-sand">entre dos capitales.</span>
             </h2>
             <p className="mt-10 max-w-md text-lg leading-[1.8] text-stone-cream/75">
-              Badajoz opera como pivote ibérico. Una posición que ninguna otra ciudad
-              de su escala puede reclamar.
+              Badajoz opera como pivote ibérico. Una posición que ninguna otra ciudad de su escala
+              puede reclamar.
             </p>
           </div>
           <div className="lg:col-span-6 lg:pt-6">
@@ -495,26 +630,70 @@ export function Destination() {
               La moda <span className="font-serif-italic text-sand">no tiene fronteras.</span>
             </h3>
             <p className="mt-4 max-w-md text-stone-cream/65">
-              27 países conectados a la pasarela de Badajoz.
+              28 países conectados a la pasarela de Badajoz.
             </p>
           </div>
-          <div className="mt-10 grid grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3 lg:grid-cols-9">
-            {guestCountries.map(([name, code], i) => (
-              <Reveal key={name} delay={Math.min(i * 40, 400)} className="block w-full">
-                <div className="group flex flex-col items-center gap-2 border border-sand/10 bg-background/30 px-2 py-3 transition-all duration-300 hover:border-sand/40 hover:bg-background/60 hover:-translate-y-0.5 sm:px-3 sm:py-4">
+          <div className="mt-10 grid grid-cols-3 gap-2 sm:grid-cols-6 sm:gap-3 lg:grid-cols-7">
+            {guestCountries.map((c, i) => (
+              <Reveal key={c.name} delay={Math.min(i * 40, 400)} className="block w-full">
+                <button
+                  type="button"
+                  onClick={() => openCountry(c)}
+                  className="group flex w-full flex-col items-center gap-2 border border-sand/10 bg-background/30 px-2 py-3 transition-all duration-300 hover:border-sand/40 hover:bg-background/60 hover:-translate-y-0.5 sm:px-3 sm:py-4"
+                >
                   <img
-                    src={`https://flagcdn.com/w80/${code}.png`}
-                    alt={`Bandera de ${name}`}
+                    src={`https://flagcdn.com/w80/${c.code}.png`}
+                    alt={`Bandera de ${c.name}`}
                     loading="lazy"
                     className="h-6 w-9 object-cover shadow-sm transition-transform duration-300 group-hover:scale-110 sm:h-8 sm:w-12"
                   />
-                  <span className="text-[0.65rem] leading-tight tracking-wide text-stone-cream/70 sm:text-xs">{name}</span>
-                </div>
+                  <span className="text-[0.65rem] leading-tight tracking-wide text-stone-cream/70 sm:text-xs">
+                    {c.name}
+                  </span>
+                </button>
               </Reveal>
             ))}
           </div>
         </div>
       </div>
+
+      {selectedCountry && (
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center bg-graphite/80 backdrop-blur-sm px-4 transition-all duration-500 ${
+            overlayClosing ? "opacity-0 backdrop-blur-0" : "opacity-100"
+          }`}
+          onClick={closeOverlay}
+          onKeyDown={(e) => {
+            if (e.key === "Escape") closeOverlay();
+          }}
+          role="button"
+          tabIndex={-1}
+        >
+          <div
+            className={`relative w-full max-w-sm border border-sand/15 bg-graphite p-8 text-center transition-all duration-500 ease-out ${
+              overlayClosing
+                ? "scale-90 translate-y-4 opacity-0"
+                : "scale-100 translate-y-0 opacity-100"
+            }`}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              onClick={closeOverlay}
+              className="absolute right-4 top-4 text-stone-cream/50 transition-colors hover:text-stone-cream"
+            >
+              ✕
+            </button>
+            <img
+              src={`https://flagcdn.com/w320/${selectedCountry.code}.png`}
+              alt={`Bandera de ${selectedCountry.name}`}
+              className="mx-auto h-24 w-36 object-cover shadow-lg"
+            />
+            <h4 className="mt-6 text-2xl tracking-[0.005em]">{selectedCountry.name}</h4>
+            <p className="mt-3 text-sm leading-[1.8] text-stone-cream/70">{selectedCountry.desc}</p>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
@@ -524,12 +703,42 @@ export function Destination() {
  * ============================================================ */
 
 const AXES: { i: string; t: string; d: string; img: string }[] = [
-  { i: "01", t: "Fashion Shows", d: "Pasarelas en escenarios patrimoniales: Alcazaba, Plaza Alta, claustros.", img: runway01 },
-  { i: "02", t: "Showrooms", d: "Espacios curados de marcas emergentes y consolidadas ES — PT.", img: runway03 },
-  { i: "03", t: "Business Meetings", d: "B2B agendados entre compradores, marcas e inversores.", img: runway02 },
-  { i: "04", t: "International Talks", d: "Foros sobre internacionalización, sostenibilidad y producto.", img: runway04 },
-  { i: "05", t: "Networking", d: "Cenas y encuentros editoriales en ubicaciones cerradas.", img: runway05 },
-  { i: "06", t: "Brand Connections", d: "Cápsulas y colaboraciones con sello Badajoz.", img: runway06 },
+  {
+    i: "01",
+    t: "Fashion Shows",
+    d: "Pasarelas en escenarios patrimoniales: Alcazaba, Plaza Alta, claustros.",
+    img: runway01,
+  },
+  {
+    i: "02",
+    t: "Showrooms",
+    d: "Espacios curados de marcas emergentes y consolidadas ES — PT.",
+    img: runway03,
+  },
+  {
+    i: "03",
+    t: "Business Meetings",
+    d: "B2B agendados entre compradores, marcas e inversores.",
+    img: runway02,
+  },
+  {
+    i: "04",
+    t: "International Talks",
+    d: "Foros sobre internacionalización, sostenibilidad y producto.",
+    img: runway04,
+  },
+  {
+    i: "05",
+    t: "Networking",
+    d: "Cenas y encuentros editoriales en ubicaciones cerradas.",
+    img: runway05,
+  },
+  {
+    i: "06",
+    t: "Brand Connections",
+    d: "Cápsulas y colaboraciones con sello Badajoz.",
+    img: runway06,
+  },
 ];
 
 export function EventSection() {
@@ -585,8 +794,8 @@ export function EventSection() {
             <span className="font-serif-italic text-sand">Una semana.</span>
           </h2>
           <p className="text-lg leading-[1.8] text-stone-cream/70 lg:col-span-5">
-            La programación se organiza en módulos autónomos. Cada uno opera por sí mismo,
-            pero suma a la narrativa del corredor ibérico.
+            La programación se organiza en módulos autónomos. Cada uno opera por sí mismo, pero suma
+            a la narrativa del corredor ibérico.
           </p>
         </div>
       </div>
@@ -640,9 +849,7 @@ export function EventSection() {
               <h3 className="mt-8 text-5xl leading-[1.05] tracking-[0.005em] xl:text-6xl">
                 {it.t}
               </h3>
-              <p className="mt-6 max-w-md text-lg leading-[1.85] text-stone-cream/75">
-                {it.d}
-              </p>
+              <p className="mt-6 max-w-md text-lg leading-[1.85] text-stone-cream/75">{it.d}</p>
             </article>
           ))}
         </div>
@@ -791,9 +998,9 @@ export function Curaduria() {
           </div>
           <div className="lg:col-span-5 lg:pt-8">
             <p className="text-lg leading-[1.85] text-stone-cream/75">
-              Badajoz Fashion Week no es un calendario de desfiles. Es un ejercicio editorial:
-              una curaduría que articula <em>diseño, industria y mercado</em> en torno a una
-              misma idea ibérica.
+              Badajoz Fashion Week no es un calendario de desfiles. Es un ejercicio editorial: una
+              curaduría que articula <em>diseño, industria y mercado</em> en torno a una misma idea
+              ibérica.
             </p>
           </div>
         </div>
@@ -805,9 +1012,7 @@ export function Curaduria() {
               <h3 className="mt-6 text-3xl leading-[1.1] tracking-[0.005em] sm:text-4xl">
                 {title}
               </h3>
-              <p className="mt-5 max-w-sm text-stone-cream/70 leading-[1.85]">
-                {body}
-              </p>
+              <p className="mt-5 max-w-sm text-stone-cream/70 leading-[1.85]">{body}</p>
             </div>
           ))}
         </div>
@@ -867,13 +1072,76 @@ type Pin = {
 };
 
 const PINS: Pin[] = [
-  { id: "p1", x: 320, y: 238, label: "Alcazaba", concept: "Historical Hub", color: "#E0C892", info: "Pasarela monumental en murallas árabes del s. IX.", mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8828,-6.9683" },
-  { id: "p2", x: 410, y: 290, label: "Plaza Alta", concept: "Networking Point", color: "#E8D9B8", info: "Showrooms y encuentros en el corazón histórico.", mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8813,-6.9683" },
-  { id: "p3", x: 580, y: 325, label: "Puentes Guadiana", concept: "Iberian Axis", color: "#C6B17A", info: "Eje simbólico entre las dos orillas del corredor.", mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8825,-6.9775" },
-  { id: "p4", x: 470, y: 205, label: "Casco Histórico", concept: "Concept Store", color: "#D8B98A", info: "Cápsulas curadas en arquitectura patrimonial.", mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8795,-6.9725" },
-  { id: "p5", x: 700, y: 250, label: "Recinto Ferial", concept: "Industry Hall", color: "#E0C892", info: "Business meetings y B2B internacional.", mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8745,-6.9585" },
-  { id: "p6", x: 220, y: 375, label: "La Galera", concept: "Gastronomy Lab", color: "#E8D9B8", info: "Cenas editoriales y producto local premium.", mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8795,-6.9725" },
-  { id: "p7", x: 800, y: 175, label: "Frontera PT", concept: "Iberian Gate", color: "#C6B17A", info: "Programación bilateral España — Portugal.", mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8735,-6.9990" },
+  {
+    id: "p1",
+    x: 320,
+    y: 238,
+    label: "Alcazaba",
+    concept: "Historical Hub",
+    color: "#E0C892",
+    info: "Pasarela monumental en murallas árabes del s. IX.",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8828,-6.9683",
+  },
+  {
+    id: "p2",
+    x: 410,
+    y: 290,
+    label: "Plaza Alta",
+    concept: "Networking Point",
+    color: "#E8D9B8",
+    info: "Showrooms y encuentros en el corazón histórico.",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8813,-6.9683",
+  },
+  {
+    id: "p3",
+    x: 580,
+    y: 325,
+    label: "Puentes Guadiana",
+    concept: "Iberian Axis",
+    color: "#C6B17A",
+    info: "Eje simbólico entre las dos orillas del corredor.",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8825,-6.9775",
+  },
+  {
+    id: "p4",
+    x: 470,
+    y: 205,
+    label: "Casco Histórico",
+    concept: "Concept Store",
+    color: "#D8B98A",
+    info: "Cápsulas curadas en arquitectura patrimonial.",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8795,-6.9725",
+  },
+  {
+    id: "p5",
+    x: 700,
+    y: 250,
+    label: "Recinto Ferial",
+    concept: "Industry Hall",
+    color: "#E0C892",
+    info: "Business meetings y B2B internacional.",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8745,-6.9585",
+  },
+  {
+    id: "p6",
+    x: 220,
+    y: 375,
+    label: "La Galera",
+    concept: "Gastronomy Lab",
+    color: "#E8D9B8",
+    info: "Cenas editoriales y producto local premium.",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8795,-6.9725",
+  },
+  {
+    id: "p7",
+    x: 800,
+    y: 175,
+    label: "Frontera PT",
+    concept: "Iberian Gate",
+    color: "#C6B17A",
+    info: "Programación bilateral España — Portugal.",
+    mapsUrl: "https://www.google.com/maps/search/?api=1&query=38.8735,-6.9990",
+  },
 ];
 
 export function BadajozMap() {
@@ -904,8 +1172,8 @@ export function BadajozMap() {
             <span className="font-serif-italic text-sand">como pasarela.</span>
           </h2>
           <p className="text-lg leading-[1.8] text-stone-cream/70 lg:col-span-4">
-            Cada localización opera como escenario, showroom o sala de reuniones.
-            La pasarela no se monta — se descubre.
+            Cada localización opera como escenario, showroom o sala de reuniones. La pasarela no se
+            monta — se descubre.
           </p>
         </div>
 
@@ -948,7 +1216,12 @@ export function BadajozMap() {
                 />
 
                 {/* Dashed topo references */}
-                <g stroke="oklch(0.74 0.045 65 / 0.28)" strokeWidth="1" strokeDasharray="3 3" fill="none">
+                <g
+                  stroke="oklch(0.74 0.045 65 / 0.28)"
+                  strokeWidth="1"
+                  strokeDasharray="3 3"
+                  fill="none"
+                >
                   <path d="M120,80 L900,560" />
                   <path d="M100,520 L920,90" />
                   <path d="M500,40 L500,600" />
@@ -1051,9 +1324,7 @@ export function BadajozMap() {
                 <div className="mt-6 text-3xl leading-[1.1] tracking-[0.01em] sm:text-4xl">
                   {active.label.toUpperCase()}
                 </div>
-                <div className="mt-3 font-serif-italic text-2xl text-sand">
-                  {active.concept}
-                </div>
+                <div className="mt-3 font-serif-italic text-2xl text-sand">{active.concept}</div>
                 <p className="mt-6 break-words text-stone-cream/70 leading-[1.85]">{active.info}</p>
                 <a
                   href={active.mapsUrl}
@@ -1075,10 +1346,15 @@ export function BadajozMap() {
                     onClick={() => handlePinClick(p)}
                     onMouseEnter={() => setActive(p)}
                     className={`flex w-full min-w-0 items-center gap-3 text-left text-mono transition-colors duration-500 ${
-                      active.id === p.id ? "text-sand" : "text-stone-cream/55 hover:text-stone-cream"
+                      active.id === p.id
+                        ? "text-sand"
+                        : "text-stone-cream/55 hover:text-stone-cream"
                     }`}
                   >
-                    <span className="h-1.5 w-1.5 shrink-0 rounded-full" style={{ background: p.color }} />
+                    <span
+                      className="h-1.5 w-1.5 shrink-0 rounded-full"
+                      style={{ background: p.color }}
+                    />
                     <span className="truncate">{p.label}</span>
                   </button>
                 ))}
@@ -1114,21 +1390,36 @@ export function Sponsors() {
       tier: "Strategic Partner",
       n: "02",
       slots: "3 disponibles",
-      bullets: ["Branding en escenarios clave", "Networking de industria", "Programa B2B exclusivo", "Acceso a editoriales"],
+      bullets: [
+        "Branding en escenarios clave",
+        "Networking de industria",
+        "Programa B2B exclusivo",
+        "Acceso a editoriales",
+      ],
       cta: "Reservar tier",
     },
     {
       tier: "Institutional Partner",
       n: "03",
       slots: "Abierto",
-      bullets: ["Cobertura institucional regional", "Programa cultural compartido", "Alianza ES — PT", "Sello oficial"],
+      bullets: [
+        "Cobertura institucional regional",
+        "Programa cultural compartido",
+        "Alianza ES — PT",
+        "Sello oficial",
+      ],
       cta: "Aplicar",
     },
     {
       tier: "Media Partner",
       n: "04",
       slots: "Selección curada",
-      bullets: ["Acceso editorial premium", "Co-branding en piezas oficiales", "Newsroom dedicada", "Distribución ibérica"],
+      bullets: [
+        "Acceso editorial premium",
+        "Co-branding en piezas oficiales",
+        "Newsroom dedicada",
+        "Distribución ibérica",
+      ],
       cta: "Aplicar",
     },
   ];
@@ -1145,8 +1436,8 @@ export function Sponsors() {
             <span className="font-serif-italic text-sand">oportunidades</span> ibéricas.
           </h2>
           <p className="text-lg leading-[1.8] text-stone-cream/70 lg:col-span-4">
-            No vendemos espacio publicitario. Construimos una posición de marca con peso institucional,
-            visibilidad transfronteriza y networking real.
+            No vendemos espacio publicitario. Construimos una posición de marca con peso
+            institucional, visibilidad transfronteriza y networking real.
           </p>
         </div>
 
@@ -1160,13 +1451,28 @@ export function Sponsors() {
             >
               <div>
                 <div className="flex items-center justify-between">
-                  <span className={`text-mono ${t.featured ? "text-graphite/60" : "text-sand"}`}>{t.n}</span>
-                  <span className={`text-mono ${t.featured ? "text-graphite/60" : "text-stone-cream/50"}`}>{t.slots}</span>
+                  <span className={`text-mono ${t.featured ? "text-graphite/60" : "text-sand"}`}>
+                    {t.n}
+                  </span>
+                  <span
+                    className={`text-mono ${t.featured ? "text-graphite/60" : "text-stone-cream/50"}`}
+                  >
+                    {t.slots}
+                  </span>
                 </div>
-                <h3 className={`mt-8 text-3xl tracking-[0.005em] ${t.featured ? "text-graphite" : ""}`}>{t.tier}</h3>
-                <ul className={`mt-8 space-y-4 border-t pt-6 ${t.featured ? "border-graphite/15" : "hairline"}`}>
+                <h3
+                  className={`mt-8 text-3xl tracking-[0.005em] ${t.featured ? "text-graphite" : ""}`}
+                >
+                  {t.tier}
+                </h3>
+                <ul
+                  className={`mt-8 space-y-4 border-t pt-6 ${t.featured ? "border-graphite/15" : "hairline"}`}
+                >
                   {t.bullets.map((b) => (
-                    <li key={b} className={`flex gap-3 text-sm leading-[1.7] ${t.featured ? "text-graphite/80" : "text-stone-cream/75"}`}>
+                    <li
+                      key={b}
+                      className={`flex gap-3 text-sm leading-[1.7] ${t.featured ? "text-graphite/80" : "text-stone-cream/75"}`}
+                    >
                       <span className={t.featured ? "text-graphite" : "text-sand"}>·</span>
                       <span>{b}</span>
                     </li>
@@ -1176,7 +1482,9 @@ export function Sponsors() {
               <Link
                 to="/contacto"
                 className={`group mt-10 inline-flex items-center gap-3 text-mono transition-colors duration-700 ${
-                  t.featured ? "text-graphite hover:text-graphite/60" : "text-sand hover:text-stone-cream"
+                  t.featured
+                    ? "text-graphite hover:text-graphite/60"
+                    : "text-sand hover:text-stone-cream"
                 }`}
               >
                 <span>{t.cta}</span>
@@ -1212,9 +1520,9 @@ export function Future() {
           Hoja de ruta ibérica
         </h2>
         <p className="mt-8 max-w-2xl text-lg leading-[1.85] text-stone-cream/85">
-          La hoja de ruta apunta a una plataforma anual ibérica de moda, turismo cultural y
-          negocio transfronterizo, con sede permanente en Badajoz y programación distribuida
-          en Mérida, Évora y Lisboa.
+          La hoja de ruta apunta a una plataforma anual ibérica de moda, turismo cultural y negocio
+          transfronterizo, con sede permanente en Badajoz y programación distribuida en Mérida,
+          Évora y Lisboa.
         </p>
         <div className="mt-16">
           {[
@@ -1250,7 +1558,12 @@ export function Contact() {
 
   const update = (field: string, value: string) => {
     setForm((prev) => ({ ...prev, [field]: value }));
-    if (errors[field]) setErrors((prev) => { const n = { ...prev }; delete n[field]; return n; });
+    if (errors[field])
+      setErrors((prev) => {
+        const n = { ...prev };
+        delete n[field];
+        return n;
+      });
   };
 
   const validate = () => {
@@ -1274,14 +1587,17 @@ export function Contact() {
               del <span className="font-serif-italic text-sand">proyecto.</span>
             </h2>
             <p className="mt-8 max-w-md text-lg leading-[1.85] text-stone-cream/75">
-              Una conversación, un dossier, una alianza.
-              Las plazas estratégicas son limitadas por diseño.
+              Una conversación, un dossier, una alianza. Las plazas estratégicas son limitadas por
+              diseño.
             </p>
             <div className="mt-12 space-y-6 border-t hairline pt-8">
               <div className="min-w-0">
                 <Kicker>Email institucional</Kicker>
-                <a href="mailto:hello@badajozfashionweek.com" className="mt-3 block break-all text-xl tracking-[0.01em] text-stone-cream transition-colors hover:text-sand sm:text-2xl">
-                  hello@badajozfashionweek.com
+                <a
+                  href="mailto:badajozfashionweek.oficial@gmail.com"
+                  className="mt-3 block break-all text-xl tracking-[0.01em] text-stone-cream transition-colors hover:text-sand sm:text-2xl"
+                >
+              badajozfashionweek.oficial@gmail.com
                 </a>
               </div>
               <div>
@@ -1299,7 +1615,10 @@ export function Contact() {
               onSubmit={(e) => {
                 e.preventDefault();
                 const v = validate();
-                if (Object.keys(v).length > 0) { setErrors(v); return; }
+                if (Object.keys(v).length > 0) {
+                  setErrors(v);
+                  return;
+                }
                 setSubmitted(true);
               }}
               aria-hidden={submitted}
@@ -1313,7 +1632,9 @@ export function Contact() {
                       key={p}
                       onClick={() => setPurpose(p)}
                       className={`border hairline px-3 py-3 text-mono transition-colors duration-500 ${
-                        purpose === p ? "bg-sand text-graphite" : "text-stone-cream/70 hover:bg-graphite"
+                        purpose === p
+                          ? "bg-sand text-graphite"
+                          : "text-stone-cream/70 hover:bg-graphite"
                       }`}
                     >
                       {p}
@@ -1322,13 +1643,44 @@ export function Contact() {
                 </div>
               </div>
               <div className="grid gap-6 sm:grid-cols-2">
-                <Field label="Nombre" id="name" placeholder="Tu nombre completo" required value={form.name} onChange={(v) => update("name", v)} error={errors.name} />
-                <Field label="Organización" id="org" placeholder="Marca · Institución · Medio" value={form.org} onChange={(v) => update("org", v)} />
-                <Field label="Email" id="email" type="email" placeholder="tucorreo@dominio.com" required value={form.email} onChange={(v) => update("email", v)} error={errors.email} />
-                <Field label="Ciudad / País" id="city" placeholder="Madrid, ES · Lisboa, PT" value={form.city} onChange={(v) => update("city", v)} />
+                <Field
+                  label="Nombre"
+                  id="name"
+                  placeholder="Tu nombre completo"
+                  required
+                  value={form.name}
+                  onChange={(v) => update("name", v)}
+                  error={errors.name}
+                />
+                <Field
+                  label="Organización"
+                  id="org"
+                  placeholder="Marca · Institución · Medio"
+                  value={form.org}
+                  onChange={(v) => update("org", v)}
+                />
+                <Field
+                  label="Email"
+                  id="email"
+                  type="email"
+                  placeholder="tucorreo@dominio.com"
+                  required
+                  value={form.email}
+                  onChange={(v) => update("email", v)}
+                  error={errors.email}
+                />
+                <Field
+                  label="Ciudad / País"
+                  id="city"
+                  placeholder="Madrid, ES · Lisboa, PT"
+                  value={form.city}
+                  onChange={(v) => update("city", v)}
+                />
               </div>
               <div>
-                <label className="label-coord" htmlFor="msg">Mensaje</label>
+                <label className="label-coord" htmlFor="msg">
+                  Mensaje
+                </label>
                 <textarea
                   id="msg"
                   rows={5}
@@ -1351,15 +1703,18 @@ export function Contact() {
             </form>
 
             {submitted && (
-              <div className="absolute inset-0 flex items-center overlay-in" style={{ animationDelay: "200ms", animationDuration: "900ms" }}>
+              <div
+                className="absolute inset-0 flex items-center overlay-in"
+                style={{ animationDelay: "200ms", animationDuration: "900ms" }}
+              >
                 <div className="w-full border-y hairline py-16 text-center">
                   <div className="label-coord text-sand">Confirmación</div>
                   <h3 className="mt-6 text-4xl leading-[1.1] tracking-[0.02em] sm:text-5xl">
                     Solicitud <span className="font-serif-italic text-sand">procesada.</span>
                   </h3>
                   <p className="mx-auto mt-8 max-w-md text-stone-cream/75 leading-[1.9]">
-                    La Dirección Creativa evaluará sus credenciales institucionales.
-                    Nos pondremos en contacto a la brevedad a través de los canales oficiales.
+                    La Dirección Creativa evaluará sus credenciales institucionales. Nos pondremos
+                    en contacto a la brevedad a través de los canales oficiales.
                   </p>
                 </div>
               </div>
@@ -1425,8 +1780,22 @@ export function Footer() {
           </p>
         </div>
         <div className="grid grid-cols-2 gap-8 lg:col-span-5 lg:grid-cols-3">
-          <FooterCol title="Proyecto" links={[["Manifiesto", "/manifiesto"], ["Destino", "/destino"], ["Sponsors", "/sponsors"]]} />
-          <FooterCol title="Contacto" links={[["Institucional", "/contacto"], ["Prensa", "/contacto"], ["Patrocinio", "/sponsors"]]} />
+          <FooterCol
+            title="Proyecto"
+            links={[
+              ["Manifiesto", "/manifiesto"],
+              ["Destino", "/destino"],
+              ["Sponsors", "/sponsors"],
+            ]}
+          />
+          <FooterCol
+            title="Contacto"
+            links={[
+              ["Institucional", "/contacto"],
+              ["Prensa", "/contacto"],
+              ["Patrocinio", "/sponsors"],
+            ]}
+          />
         </div>
         <div className="lg:col-span-2">
           <Kicker>© 2026</Kicker>
@@ -1435,6 +1804,30 @@ export function Footer() {
             <br />
             All rights reserved.
           </p>
+          <div className="mt-5 flex flex-col gap-3">
+            <a
+              href="https://www.instagram.com/badajozfashionweek/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 border border-sand/20 px-4 py-3 transition-all duration-300 hover:border-sand/50 hover:bg-sand/10"
+            >
+              <svg className="h-5 w-5 fill-stone-cream/70 transition-colors group-hover:fill-sand" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+              </svg>
+              <span className="text-mono text-xs tracking-wider text-stone-cream/80 transition-colors group-hover:text-sand">Instagram</span>
+            </a>
+            <a
+              href="https://www.tiktok.com/@badajozfashionweek"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-3 border border-sand/20 px-4 py-3 transition-all duration-300 hover:border-sand/50 hover:bg-sand/10"
+            >
+              <svg className="h-5 w-5 fill-stone-cream/70 transition-colors group-hover:fill-sand" viewBox="0 0 24 24">
+                <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9a6.33 6.33 0 00-.79-.05A6.34 6.34 0 003.15 15.3a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 005.58 2.17v-3.4a4.85 4.85 0 01-3.77-1.57z" />
+              </svg>
+              <span className="text-mono text-xs tracking-wider text-stone-cream/80 transition-colors group-hover:text-sand">TikTok</span>
+            </a>
+          </div>
         </div>
       </div>
     </footer>
@@ -1448,7 +1841,10 @@ function FooterCol({ title, links }: { title: string; links: [string, string][] 
       <ul className="mt-5 space-y-3">
         {links.map(([l, h]) => (
           <li key={l + h}>
-            <Link to={h} className="block truncate text-stone-cream/70 transition-colors hover:text-sand">
+            <Link
+              to={h}
+              className="block truncate text-stone-cream/70 transition-colors hover:text-sand"
+            >
               {l}
             </Link>
           </li>

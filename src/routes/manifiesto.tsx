@@ -5,7 +5,11 @@ export const Route = createFileRoute("/manifiesto")({
   head: () => ({
     meta: [
       { title: "Manifiesto — Badajoz Fashion Week" },
-      { name: "description", content: "Filosofía, programa y curaduría de Badajoz Fashion Week. Seis ejes. Una semana. Fashion Shows, Showrooms, Business Meetings, International Talks, Networking, Brand Connections." },
+      {
+        name: "description",
+        content:
+          "Filosofía, programa y curaduría de Badajoz Fashion Week. Seis ejes. Una semana. Fashion Shows, Showrooms, Business Meetings, International Talks, Networking, Brand Connections.",
+      },
     ],
   }),
   component: () => (

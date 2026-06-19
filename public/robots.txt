@@ -1,2 +1,3 @@
 User-agent: *
 Allow: /
+Sitemap: https://badajoz-fashion-week-demo.vercel.app/sitemap.xml
